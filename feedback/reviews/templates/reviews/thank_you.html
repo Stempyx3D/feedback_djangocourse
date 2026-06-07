@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Thank You!
+{% endblock %}
+
+{% block content %}
+    <h1>Thank you for your feedback {{ user_name }}!</h1>
+    <a href="{% url 'all_reviews' %}">Look at all reviews</a>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'reviews/styles.css' %}">
+    <title>Thank You!</title>
+</head>
+<body>
+    <a href="{% url 'review' %}">Submit a Review</a>
+    <div class="review-table">
+        {% for review in reviews %}
+            <div>
+                <h3>{{ review.user_name }}</h3>
+                <p>{{ review.review_text }}</p>
+                <p>Rating: {{ review.rating }}/5</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+
+
+
+

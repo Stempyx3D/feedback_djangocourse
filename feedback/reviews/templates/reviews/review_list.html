@@ -1,0 +1,24 @@
+{% extends "reviews/base.html" %}
+
+{% block title %}
+    All Reviews
+{% endblock %}
+
+{% block content %}
+    <h1>Best Reviews</h1>
+    <ul>
+        {% for review in reviews.data %}
+            <li>
+                <h3><a href="{% url 'single_review' id=review.id %}">{{ review.user_name }} (Rating: {{ review.rating }}/5)</a></h3>
+            </li>
+        {% endfor %}
+    </ul>
+    <h1>All Reviews</h1>
+    <ul>
+        {% for review in reviews.base_query %}
+            <li>
+                <h3><a href="{% url 'single_review' id=review.id %}">{{ review.user_name }} (Rating: {{ review.rating }}/5)</a></h3>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
